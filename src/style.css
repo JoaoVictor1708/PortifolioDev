@@ -95,13 +95,14 @@
 
             .toggleTheme{
                 background-color: var(--gray02--);
-                width: 10rem;
+                width: 6.8rem;
                 height: 3.5rem;
                 border-radius: 0.8rem;
                 padding: 0.4rem;
                 display: flex;
                 align-items: center;
-                
+                justify-content: left;
+
                 i{
                     background-color: var(--gray01--);
                     height: 100%;
@@ -111,8 +112,33 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    position: relative;
+
+                    animation-name: toggleThemeAnimationReverse;
+                    animation-timing-function: linear;
+                    animation-duration: 0.3s;
+                    animation-fill-mode: both;
+                    animation-direction: alternate;
                 }
             }
         }
+    }
+}
+
+@keyframes toggleThemeAnimation {
+    from{
+
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+
+@keyframes toggleThemeAnimationReverse {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
     }
 }
