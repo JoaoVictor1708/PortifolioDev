@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 const scrollCards = document.querySelector(".scrollProjects")
 function loadDataCards (){
-    let cardDelay = 0.6
+    let cardDelay = 0.2
     for(let indexCard = 0; indexCard<dataCards.length; indexCard++){
         const newCard = `
             <div class="cardProject" style="animation-delay: ${cardDelay}s" id="${dataCards[indexCard].cardId}">
@@ -97,3 +97,36 @@ function expandCard(targetId){
         }, 500);
     })
 }
+
+// scrollSections
+function changeToProjectsSection(){
+    document.querySelector(".contentScroll").style.marginLeft = "-1024px"
+    document.querySelector(".scrollProjects").innerHTML = ""
+    document.querySelector("#headerRadio02").checked = true
+    loadDataCards()
+}
+
+const seeMyProjectsBtn = document.querySelector(".seeMyProjectsBtn")
+seeMyProjectsBtn.addEventListener("click", ()=>{
+    changeToProjectsSection()
+})
+document.querySelector("#headerProjectsP").addEventListener("click", ()=>changeToProjectsSection())
+
+document.querySelector("#headerAboutMeP").addEventListener("click", ()=>{
+    document.querySelector("#headerRadio01").checked = true
+    document.querySelector(".contentScroll").style.marginLeft = "0"
+})
+
+document.querySelector("#headerProjectsP").addEventListener("click", ()=>{
+    changeToProjectsSection()
+})
+
+document.querySelector("#headerServicesP").addEventListener("click", ()=>{
+    document.querySelector("#headerRadio03").checked = true
+    document.querySelector(".contentScroll").style.marginLeft = "-2048px"
+})
+
+document.querySelector("#headerFormationsP").addEventListener("click", ()=>{
+    document.querySelector("#headerRadio04").checked = true
+    document.querySelector(".contentScroll").style.marginLeft = "-3072px"
+})
