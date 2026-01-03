@@ -104,7 +104,7 @@ function expandCard(targetId, fileArray){
 
 // scrollSections
 function changeToProjectsSection(){
-    document.querySelector(".contentScroll").style.marginLeft = "-1024px"
+    document.querySelector(".contentScroll").style.marginLeft = "-100%"
     document.querySelector(".scrollProjects").innerHTML = ""
     loadDataCards(myProjectsContainer, myProjectsContainerArray)
     document.querySelector("#headerRadio02").checked = true
@@ -127,10 +127,31 @@ document.querySelector("#headerProjectsP").addEventListener("click", ()=>{
 
 document.querySelector("#headerServicesP").addEventListener("click", ()=>{
     document.querySelector("#headerRadio03").checked = true
-    document.querySelector(".contentScroll").style.marginLeft = "-2048px"
+    document.querySelector(".contentScroll").style.marginLeft = "-200%"
 })
 
 document.querySelector("#headerFormationsP").addEventListener("click", ()=>{
     document.querySelector("#headerRadio04").checked = true
-    document.querySelector(".contentScroll").style.marginLeft = "-3072px"
+    document.querySelector(".contentScroll").style.marginLeft = "-300%"
+})
+
+//ScrollMenuBtn
+const scrollMenuBtn = document.querySelector(".scrollMenuBtn")
+const scrollMenu = document.querySelector(".headerSections")
+scrollMenu.classList.add("scrollMenuBtnDesactived")
+scrollMenuBtn.style.transform = "rotate(135deg)"
+scrollMenuBtn.classList.add("scrollMenuBtnDesactived")
+scrollMenuBtn.addEventListener("click", ()=>{
+    if(scrollMenu.classList[1] === "scrollMenuBtnActived"){
+        scrollMenu.classList.remove("scrollMenuBtnActived")
+        scrollMenu.classList.add("scrollMenuBtnDesactived")
+        scrollMenu.style.animationName = "appearV3"
+        scrollMenuBtn.style.transform = "rotate(135deg)"
+    }
+    else{
+        scrollMenu.classList.remove("scrollMenuBtnDesactived")
+        scrollMenu.classList.add("scrollMenuBtnActived")
+        scrollMenu.style.animationName = "desappearV2"
+        scrollMenuBtn.style.transform = "rotate(0deg)"
+    }
 })
