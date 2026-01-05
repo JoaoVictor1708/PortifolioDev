@@ -72,4 +72,64 @@ const technicalProjects = [
     }
 ]
 
+const formations = [
+    {
+        formationId: "0",
+        instituitionName: "Armando Sestini",
+        course: "Ensino Técnico em Administração",
+        workLoad: "",
+        period: "01/2025 à 12/2026",
+        capacitations: [
+            "Administração",
+            "Recursos Humanos",
+            "Logística",
+            "Gestão de negócios",
+            "Excel",
+            "Word",
+            "Canva"],
+        description: "Curso Técnico em administração abrangendo desde conteúdos teóricos até projetos práticos de administração real e vivências no dia a dia de uma empresa",
+        certificateLink: "",
+    },
+    {
+        formationId: "1",
+        instituitionName: "RocketSeat",
+        course: "FullStack",
+        workLoad: "",
+        period: "06/2025 à 03/2026",
+        capacitations: ["Html", "Css", "JavaScript", "React", "NodeJS", "TypeScript", "API Rest", "Figma", "Git&GitHub"],
+        description: `Formação completa em Desenvolvimento Web, abrangendo Front-End e Back-End, com foco na criação de aplicações práticas para o mercado de trabalho.`,
+        certificateLink: "",
+    },
+    {
+        formationId: "2",
+        instituitionName: "Prime Cursos",
+        course: "Informática Avançada",
+        workLoad: "",
+        period: "",
+        capacitations: [""],
+        description: "Capacitação no uso eficiente das princiapis ferramentas de informática, incluindo o Pacote Office e noções de internet, segurança de dados e produtividade digital.",
+        certificateLink: ""
+    },
+    {
+        formationId: "3",
+        instituitionName: "Fundação Bradesco",
+        course: "Excel Avançado",
+        workLoad: "",
+        period: "",
+        capacitations: ["Excel-Avançado"],
+        description: "Certificação que explora o excel do nível básico ao avançado",
+        certificateLink:"",
+    },
+    {
+        formationId: "4",
+        instituitionName: "EducationFirst & Wizard",
+        course: "Inglês Intermediário",
+        workLoad: "",
+        period: "06/2024 à 11/2024",
+        capacitations: ["Inglês-Avançado"],
+        description: "Formação de Inglês intermediário B1/B2",
+        certificateLink: ""
+    }
+]
+
 export {myProjectsContainerArray, technicalProjects}

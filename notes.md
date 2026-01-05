@@ -11,3 +11,9 @@ trocar a maneira que está funcionando o switch para trocar o tema
 tentar deixar o scrollbar um pouco mais agradável
 
 trocar a maneira como a função faz a captura das fotos dos projetos e adicionar um slider para cada projeto -> organizar uma pasta de fotos para cada projeto
+
+mudar novamente como a página funciona e deixar num corpo só ou do jeito que está
+
+fazer a aba de contatos
+
+mudar o scrollMenu
