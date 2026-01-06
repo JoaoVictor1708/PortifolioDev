@@ -3,8 +3,7 @@ import {myProjectsContainerArray, technicalProjects} from "./dataCards.js"
 
 // toggleTheme
 const toggleTheme = document.querySelector(".toggleTheme")
-const btnToggleMode = document.querySelector("#btnToggleMode")
-btnToggleMode.addEventListener("click", ()=> {
+toggleTheme.addEventListener("click", ()=> {
     if(btnToggleMode.className === "fa-solid fa-cloud-sun"){
         btnToggleMode.className = "fa-solid fa-cloud-moon"
         document.body.className = "darkModeTheme"
@@ -104,7 +103,6 @@ function expandCard(targetId, fileArray){
 
 // scrollSections
 function changeToProjectsSection(){
-    document.querySelector(".contentScroll").style.marginLeft = "-100%"
     document.querySelector(".scrollProjects").innerHTML = ""
     loadDataCards(myProjectsContainer, myProjectsContainerArray)
     document.querySelector("#headerRadio02").checked = true
@@ -114,19 +112,16 @@ document.querySelector(".seeMyProjectsBtn").addEventListener("click", ()=>change
 
 document.querySelector("#headerAboutMeP").addEventListener("click", ()=>{
     document.querySelector("#headerRadio01").checked = true
-    document.querySelector(".contentScroll").style.marginLeft = "0"
 })
 
 document.querySelector("#headerProjectsP").addEventListener("click", ()=>changeToProjectsSection())
 
 document.querySelector("#headerServicesP").addEventListener("click", ()=>{
     document.querySelector("#headerRadio03").checked = true
-    document.querySelector(".contentScroll").style.marginLeft = "-200%"
 })
 
 document.querySelector("#headerFormationsP").addEventListener("click", ()=>{
     document.querySelector("#headerRadio04").checked = true
-    document.querySelector(".contentScroll").style.marginLeft = "-300%"
 })
 
 // appearDesappearFunction
@@ -148,3 +143,5 @@ const scrollMenu = document.querySelector(".headerSections")
 
 scrollMenu.classList.add("divDesactived")
 scrollMenuBtn.addEventListener("click", ()=> appearDesappear(scrollMenu, "upToDown", "desappear"))
+
+//Contacts

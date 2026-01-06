@@ -49,6 +49,7 @@ body, html{
     top: 0;
     box-shadow: 0 .3rem .8rem #000;
     color: var(--black01--);
+    padding: 1rem 1.5rem;
 
     .headerContent{
         display: flex;
@@ -56,11 +57,11 @@ body, html{
         align-items: center;
         width: 100%;
         max-width: 102.4rem;
-        padding: 1rem 1.5rem;
 
         .logoName{
             font-size: 2rem;
             font-weight: 800;
+            margin-right: 3rem;
 
             strong{
                 color: var(--blue01--);
@@ -70,59 +71,68 @@ body, html{
         }
         .headerSections{
             display: flex;
-            gap: 3.8rem;
+            justify-content: space-between;
             font-size: 1.6rem;
             font-weight: 600;
+            width: 100%;
+            align-items: center;
 
-            p{
-                text-decoration: none;
-                color: var(--black01--);
+            .guideSections{
                 display: flex;
-                flex-direction: column;
-                cursor: pointer;
-                gap: 2px;
-            }
+                justify-content: center;
+                align-items: center;
+                gap: 3.8rem;
 
-            p span{
-                width: 0;
-                height: 0.2rem;
-                background-color: var(--blue01--);
-                transform: translate(0,-.3rem);
-                border-radius: 0.8rem;
-            }
+                p{
+                    text-decoration: none;
+                    color: var(--black01--);
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+                    gap: 2px;
+                    width: 8rem;
+                    text-align: center;
+                }
 
-            p:hover span{
-                width: 100%;
-            }
+                p span{
+                    width: 0;
+                    height: 0.2rem;
+                    background-color: var(--blue01--);
+                    transform: translate(0,-.3rem);
+                    border-radius: 0.8rem;
+                }
 
-            input{
-                display: none;
-            }
+                p:hover span{
+                    width: 100%;
+                }
 
-            /* Radio 01 - Sobre Mim */
-            #headerRadio01:checked ~ #headerAboutMeP span{
-                width: 100%;
-            }
+                input{
+                    display: none;
+                }
 
-            /* Radio 02 - Projetos */
-            #headerRadio02:checked ~ #headerProjectsP span{
-                width: 100%;
-            }
+                /* Radio 01 - Sobre Mim */
+                #headerRadio01:checked ~ #headerAboutMeP span{
+                    width: 100%;
+                }
 
-            /* Radio 03 - Serviços */
-            #headerRadio03:checked ~ #headerServicesP span{
-                width: 100%;
-            }
+                /* Radio 02 - Projetos */
+                #headerRadio02:checked ~ #headerProjectsP span{
+                    width: 100%;
+                }
 
-            /* Radio 04 - Formações */
-            #headerRadio04:checked ~ #headerFormationsP span{
-                width: 100%;
+                /* Radio 03 - Serviços */
+                #headerRadio03:checked ~ #headerServicesP span{
+                    width: 100%;
+                }
+
+                /* Radio 04 - Formações */
+                #headerRadio04:checked ~ #headerFormationsP span{
+                    width: 100%;
+                }
             }
         }
         .accessibilitySection{
             display: flex;
-            /* width: 100%;
-            max-width: 21.2rem; */
             justify-content: center;
             gap: 1rem;
             align-items: center;
@@ -157,6 +167,9 @@ body, html{
                 }
             }
         }
+        .contactsDiv{
+            display: none;
+        }
     }
 }
 
@@ -164,218 +177,166 @@ body, html{
     max-width: 1024px;
     width: 100%;
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
-    overflow: hidden;
-    height: 100%;
     box-shadow: 0 0 .8rem #000;
     color: var(--black01--);
+    background-color: var(--gray01--);
+    padding: 0rem 2.5rem;
+    gap: 1rem;
 
-    .contentScroll{
-        max-width: 400%;
+    .apresentation, .projects, .services, .formations{
         display: flex;
-        flex-direction: row;
+        height: 100dvh;
+        max-width: 1024px;
+        width: 100%;
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .apresentation{
+        justify-content: space-between;
         align-items: center;
-        background-color: var(--gray01--);
+        padding-top: 6.1rem;
 
-        .apresentation{
-            width: 1024px;
-            justify-content: space-between;
+        .aboutMe{
+            max-width: 60rem;
             display: flex;
-            align-items: center;
-            padding: 8rem 5rem;
-            margin: 5rem 0;
-            height: 100dvh;
+            flex-direction: column;
 
-            .aboutMe{
-                width: 100%;
-                max-width: 60rem;
-                display: flex;
-                flex-direction: column;
-
-                h1{
-                    font-size: 2.2rem;
-                    font-weight: 700;
-                    margin-bottom: 1rem;
-                }
-                p{
-                    font-size: 1.8rem;
-                    font-weight: 600;
-                    margin-bottom: 1rem;
-                }
-                .seeMyProjectsBtn{
-                    margin: 0 auto;
-                    padding: 2.5rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 1.4rem;
-                }
+            h1{
+                font-size: 2.2rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
             }
-
-            img{
-                width: 25rem;
-                height: 25rem;
-                background-color: var(--gray02--);
-                border-radius: 50%;
+            p{
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+            .seeMyProjectsBtn{
+                margin: 0 auto;
+                padding: 2.5rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                outline: 2px solid;
-                outline-color: var(--black01--);
-                box-shadow: 0 0 10px 3px black;
+                font-size: 1.4rem;
             }
         }
-
-        .projects{
-            max-width: 1024px;
+        img{
+            width: 25rem;
+            height: 25rem;
+            background-color: var(--gray02--);
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
-            padding: 8rem 5rem;
-            h2{
-                font-size: 2rem;
-                margin: 0.2rem 2rem;
-            }
+            justify-content: center;
+            align-items: center;
+            outline: 2px solid;
+            outline-color: var(--black01--);
+            box-shadow: 0 0 10px 3px black;
+        }
+    }
 
-            .projectsContainer{
-                background-color: var(--white03--);
-                padding: 1rem;
-                margin-bottom: 1rem;
-                border-radius: 1.6rem;
-                box-shadow: 0 0 2px 1px #0000007a;
-
-                .scrollProjects{
+    .projects{
+        padding: 1rem;
+        border-radius: 0.8rem;
+        background-color: var(--white02--);
+        flex-direction: column;
+        h2{
+            font-size: 2rem;
+            margin: 0.2rem 2rem;
+        }
+        .projectsContainer{
+            background-color: var(--white03--);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 1.6rem;
+            box-shadow: 0 0 2px 1px #0000007a;
+            .scrollProjects{
                 overflow-x: scroll;
                 overflow-y: hidden;
                 white-space: nowrap;
                 border-radius: .8rem;
                 padding: .5rem 0.3rem;
                 width: 100%;
+                .cardProject:last-child{
+                    margin-right: 0;
+                }
+                .cardProject{
+                    width: 26rem;
+                    height: 18rem;
+                    background-color: var(--white02--);
+                    display: inline-block;
+                    border-radius: .8rem;
+                    border: 1px solid var(--gray02--);
+                    overflow: hidden;
+                    cursor: pointer;
+                    margin-right: 0.5rem;
 
-                    .cardProject:last-child{
-                        margin-right: 0;
+                    animation-name: appear ;
+                    animation-duration: 0.5s;
+                    animation-timing-function: linear;
+                    animation-fill-mode: backwards;
+                    img{
+                        width: 100%;
+                        height: 14rem;
                     }
-
-                    .cardProject{
-                        width: 26rem;
-                        height: 18rem;
-                        background-color: var(--white02--);
-                        display: inline-block;
-                        border-radius: .8rem;
-                        border: 1px solid var(--gray02--);
-                        overflow: hidden;
-                        cursor: pointer;
-                        margin-right: 0.5rem;
-
-                        animation-name: appear ;
-                        animation-duration: 0.5s;
-                        animation-timing-function: linear;
-                        animation-fill-mode: backwards;
-
-                        img{
-                            width: 100%;
-                            height: 14rem;
-                        }
-
-                        h3{
-                            margin-left: 0.5rem;
-                            font-size: 1.4rem;
-                            display: flex;
-                            align-items: center;
-                            
-                            span{
-                                background-color: var(--blue01--);
-                                width: .5rem;
-                                height: .5rem;
-                                border-radius: 50%;
-                                margin-right: 0.2rem;
-                            }
+                    h3{
+                        margin-left: 0.5rem;
+                        font-size: 1.4rem;
+                        display: flex;
+                        align-items: center;
+                        span{
+                            background-color: var(--blue01--);
+                            width: .5rem;
+                            height: .5rem;
+                            border-radius: 50%;
+                            margin-right: 0.2rem;
                         }
                     }
-
-                    .cardProject:hover{
-                        transform: scale(1.02);
-                        background-color: var(--gray01--);
-                    }
+                }
+                .cardProject:hover{
+                    transform: scale(1.02);
+                    background-color: var(--gray01--);
                 }
             }
         }
+    }
 
-        ::-webkit-scrollbar{
-            width: 0;
-            height: 0;
-        }
-
-        .services{
-            max-width: 1024px;
-            width: 1024px;
-            display: flex;
-            flex-direction: column;
-            padding: 8rem 5rem;
-            gap: 1.2rem;
-            height: 100dvh;
-            overflow-y: scroll;
-           
-            h2{
-                font-size: 2rem;
-                margin: 0.2rem 2rem;
-            }
-
-            .serviceContainer{
-                display: flex;
-                padding: 0.5rem 2rem;
-                flex-direction: column;
-                border-radius: 0.8rem;
-                box-shadow: 0 0 10px 1px #000;
-                background-color: var(--white02--);
-
-                p{
-                    font-size: 1.6rem;
-                }
-            }
-            .serviceContainer:hover{
-                transform: scale(1.01);
-                box-shadow: 0 0 10px 1px var(--blue01--);
-                background-color: var(--gray01--);
-            }
-            span{
-                border-left: 2px solid #000;
-                border-radius: 4px;
-                padding: 1rem;
-                font-size: 1.4rem;
-                font-weight: 600;
-                margin: 0 auto;
-                background-color: var(--white02--);
-            }
-        }
-
+    .services{ 
+        flex-direction: column;
+        gap: 1.2rem;
         
-
-        .formations{
-            width: 1024px;
+        h2{
+            font-size: 2rem;
+            margin: 0.2rem 2rem;
         }
 
-        .projects{
-            ::-webkit-scrollbar{
-                width: 0.75rem;
-                height: 0.75rem;
-                display: flex;
-            }
+        .serviceContainer{
+            display: flex;
+            padding: 0.5rem 2rem;
+            flex-direction: column;
+            border-radius: 0.8rem;
+            box-shadow: 0 0 10px 1px #000;
+            background-color: var(--white02--);
 
-            ::-webkit-scrollbar-track{
-                border-radius: 1.6rem;
-                outline: 0.2rem solid var(--gray02--);
+            p{
+                font-size: 1.6rem;
             }
-
-            ::-webkit-scrollbar-track-piece{
-                background-color: var(--gray02--);
-            }
-
-            ::-webkit-scrollbar-thumb{
-                background-color: #f2f2f2;
-                border-radius: 1.6rem;
-                height: 0.75rem;
-                width: 0.75rem;
-            }
+        }
+        .serviceContainer:hover{
+            transform: scale(1.01);
+            box-shadow: 0 0 10px 1px var(--blue01--);
+            background-color: var(--gray01--);
+        }
+        span{
+            border-left: 2px solid #000;
+            border-radius: 4px;
+            padding: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 auto;
+            background-color: var(--white02--);
         }
     }
 }
@@ -401,20 +362,13 @@ body, html{
 .scrollMenuBtnDiv{
     display: none;
     opacity: 0;
-    position: fixed;
     font-size: 2rem;
     justify-content: center;
     align-items: center;
-    color: #f2f2f2;
+    color: var(--black01--);
     cursor: pointer;
-    z-index: 0;
-    left: 0;
-    right: 0;
 
     i{
-        width: 40px;
-        height: 40px;
-        background-color: var(--blue01--);
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -530,28 +484,28 @@ body, html{
     }
 }
 
-/* Melhorando o visual do Scroll */
-::-webkit-scrollbar{
-    width: 0.75rem;
-    height: 0.75rem;
-    display: flex;
-}
+/* Personalizando o scroll dos projetos */
+        ::-webkit-scrollbar{
+            width: 0.75rem;
+            height: 0.75rem;
+            display: flex;
+        }
 
-::-webkit-scrollbar-track{
-    border-radius: 1.6rem;
-    outline: 0.2rem solid var(--gray02--);
-}
+        ::-webkit-scrollbar-track{
+            border-radius: 1.6rem;
+            outline: 0.2rem solid var(--gray02--);
+        }
 
-::-webkit-scrollbar-track-piece{
-    background-color: var(--gray02--);
-}
+        ::-webkit-scrollbar-track-piece{
+            background-color: var(--gray02--);
+        }
 
-::-webkit-scrollbar-thumb{
-    background-color: #f2f2f2;
-    border-radius: 1.6rem;
-    height: 0.75rem;
-    width: 0.75rem;
-}
+        ::-webkit-scrollbar-thumb{
+            background-color: #e0e0e0;
+            border-radius: 1.6rem;
+            height: 0.75rem;
+            width: 0.75rem;
+        }
 
 /* Keyframes */
 @keyframes toggleThemeAnimation {
