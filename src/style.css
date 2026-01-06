@@ -300,6 +300,11 @@ body, html{
             }
         }
 
+        ::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        }
+
         .services{
             max-width: 1024px;
             width: 1024px;
@@ -349,21 +354,6 @@ body, html{
             width: 1024px;
         }
 
-        /* Mudando o scroll para das sessões e da sessão de projetos */
-        ::-webkit-scrollbar{
-            width: 0;
-            height: 0;
-        }
-
-        ::-webkit-scrollbar-track-piece{
-            background-color:transparent;
-        }
-
-        ::-webkit-scrollbar-thumb{
-            background-color: transparent;
-            height: 0;
-            width: 0;
-        }
         .projects{
             ::-webkit-scrollbar{
                 width: 0.75rem;
@@ -408,29 +398,39 @@ body, html{
     box-shadow: 0 0 10px 1px var(--blue02--);
 }
 
-.scrollMenuBtn{
+.scrollMenuBtnDiv{
     display: none;
     opacity: 0;
     position: fixed;
-    background-color: var(--blue01--);
     font-size: 2rem;
-    width: 40px;
-    height: 40px;
-    display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    bottom: 1.5rem;
-    right: 1.5rem;
     color: #f2f2f2;
     cursor: pointer;
-    z-index: 1;
+    z-index: 0;
+    left: 0;
+    right: 0;
 
-    animation-name: rotateElement;
-    animation-duration: 0.3s;
-    animation-timing-function: linear;
-    animation-fill-mode:forwards;
-    animation-direction: reverse;
+    i{
+        width: 40px;
+        height: 40px;
+        background-color: var(--blue01--);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        animation-fill-mode:forwards;
+        animation-direction: reverse;
+    }
+
+    .fa-x{
+        display: none;
+        opacity: 0;
+        position: relative;
+    }
 }
 
 /* Card Expandido */
@@ -594,7 +594,7 @@ body, html{
     }
     100%{
         opacity: 0;
-        transform: translateY(-2rem);
+        transform: translateY(-5rem);
     }
 }
 
@@ -607,55 +607,24 @@ body, html{
     }
 }
 
-@keyframes appearV3{
-    0%{
-        opacity: 0;
-        transform: translateY(2rem);
-        display: none;
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-        display: flex;
-    }
-}
-
 @keyframes desappearV2 {
-    0%{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes upToDown {
+    from{
+        opacity: 0;
+        display: none;
+        transform: translateY(-5rem);
+    }
+    to{
+        display: flex;
         opacity: 1;
         transform: translateY(0);
-        display: flex;
-    }
-    100%{
-        opacity: 0;
-        transform: translateY(2rem);
-        display: none;
-    }
-}
-
-@keyframes desappearV3 {
-    from{
-        opacity: 1;
-    }
-    to{
-        opacity: 0;
-    }
-}
-
-@keyframes rotateElement {
-    from{
-        transform: rotate(135deg);
-    }
-    to{
-        transform: rotate(0);
-    }
-}
-
-@keyframes rotateElementReverse {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(135deg);
     }
 }

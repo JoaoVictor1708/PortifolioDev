@@ -9,6 +9,7 @@ btnToggleMode.addEventListener("click", ()=> {
         btnToggleMode.className = "fa-solid fa-cloud-moon"
         document.body.className = "darkModeTheme"
         btnToggleMode.style.animationName = "toggleThemeAnimation"
+        btnToggleMode.style.animationDirection = "normal"
     }
     else{
         btnToggleMode.className = "fa-solid fa-cloud-sun"
@@ -92,7 +93,7 @@ function expandCard(targetId, fileArray){
             cardDiv.style.animationDuration = "0.3s"
             cardDiv.style.animationName = "desappear"
             bodyCardExpanded.style.animationDuration = "0.3s"
-            bodyCardExpanded.style.animationName = "desappearV3"
+            bodyCardExpanded.style.animationName = "desappearV2"
             setTimeout(() => {
                 cardDiv.remove()
                 bodyCardExpanded.remove()
@@ -146,7 +147,4 @@ const scrollMenuBtn = document.querySelector(".scrollMenuBtn")
 const scrollMenu = document.querySelector(".headerSections")
 
 scrollMenu.classList.add("divDesactived")
-scrollMenuBtn.addEventListener("click", ()=>{
-    appearDesappear(scrollMenu, "appearV3", "desappearV2")
-    appearDesappear(scrollMenuBtn, "rotateElement", "rotateElementReverse")
-})
+scrollMenuBtn.addEventListener("click", ()=> appearDesappear(scrollMenu, "upToDown", "desappear"))
